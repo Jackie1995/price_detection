@@ -176,9 +176,11 @@ def get_file_name(chanchu_df):
     :return: type = str.
     """
     row_number = chanchu_df.shape[0]
-    pt = str(chanchu_df['pt'][1])[:8]
+    chanchu_df.reset_index(inplace = True)
+    pt = str(chanchu_df.loc[1,'pt'])[:8]
     file_name = '价格异常_规则策略命中{0}套北京合租房源_pt{1}.csv'.format(row_number, pt)
     return file_name
+
 
 
 if __name__ == '__main__':
