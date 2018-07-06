@@ -1,7 +1,8 @@
 -- Q 837717
 -- 这个是hive 命令行执行版本
--- 注释了随机抽样；注释了筛选价格低的where语句。
--- pt = 0619 的强命中房源【sparksql--863行数据】
+-- 查询的目标是：截止到某个pt（入参）的强命中问题房源全量。
+-- 暂时注释了随机抽样筛选以及价格低的房源筛选。
+
 ADD jar hdfs://nn-cluster/user/bigdata/lib/dataDev-1.0.jar;
 CREATE temporary function aes128DecodePublic as 'com.lianjia.datadev.udf.AES128DecodePublicUDF';
 
